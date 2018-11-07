@@ -60,11 +60,11 @@ class JoystickViewController: UIViewController, Controller {
     }
     
     private func setupSticks() {
-        stickC.port = .C
-        stickD.port = .D
-        
-        stickC.signal.observe(observerC)
-        stickD.signal.observe(observerD)
+//        stickC.port = .C
+//        stickD.port = .D
+
+//        stickC.signal.observe(observerC)
+//        stickD.signal.observe(observerD)
     }
     
     func setEnable(_ enable: Bool, port: BoostBLEKit.Port) {
@@ -74,13 +74,15 @@ class JoystickViewController: UIViewController, Controller {
         case .B:
             isEnableB = enable
         case .C:
-            stickC.isEnabled = enable
+          break
+            // stickC.isEnabled = enable
         case .D:
-            stickD.isEnabled = enable
+          break
+            // stickD.isEnabled = enable
         default:
             break
         }
         
-        imageView.alpha = isEnableA && isEnableB ? 1.0 : 0.25
+        // imageView.alpha = isEnableA && isEnableB ? 1.0 : 0.25
     }
 }

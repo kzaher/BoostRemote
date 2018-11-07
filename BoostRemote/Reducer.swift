@@ -53,7 +53,9 @@ struct Reducer {
             state[portId] = ioType
         case .disconnected(let portId):
             state[portId] = nil
-        }
+        case .sensorValue(_, _):
+          break
+      }
         
         return state
     }

@@ -145,7 +145,9 @@ extension MoveHubManager: CBPeripheralDelegate {
                 connectedHub?.connectedIOs[portId] = ioType
             case .disconnected(let portId):
                 connectedHub?.connectedIOs[portId] = nil
-            }
+            case .sensorValue(_, _):
+              break
+          }
         }
     }
 }
